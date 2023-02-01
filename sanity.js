@@ -1,5 +1,5 @@
 import sanityClient from '@sanity/client'
-import { ImageUrlBuilder } from '@sanity/image-url'
+import createImageUrlBuilder from '@sanity/image-url'
 
 const client = sanityClient({
     projectId: 'qwoxusny',
@@ -8,7 +8,7 @@ const client = sanityClient({
     apiVersion: '2021-10-21',
 })
 
-const builder = ImageUrlBuilder(client)
+const builder = createImageUrlBuilder(client)
 export const urlFor = (source) => builder.image(source)
 
 export default  client 
